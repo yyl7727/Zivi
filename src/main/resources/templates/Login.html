@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Zivi - Admin Dashboard Template</title>
+    <title>Zivi</title>
     <link rel="stylesheet" th:href="@{/css/app.min.css}">
     <link rel="stylesheet" th:href="@{/bundles/bootstrap-social/bootstrap-social.css}">
+    <link rel="stylesheet" th:href="@{/bundles/izitoast/css/iziToast.min.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/components.css}">
     <link rel="stylesheet" th:href="@{/css/custom.css}">
     <link rel='shortcut icon' type='image/x-icon' th:href="@{/img/favicon.ico}" />
 </head>
-
 <body>
     <div id="app">
         <section class="section">
@@ -24,10 +24,10 @@
                                 <h4>登录</h4>
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="#" class="needs-validation" novalidate="">
+                                <form method="POST" th:action="@{/Login}" th:object="${person}" class="needs-validation" novalidate="">
                                     <div class="form-group">
                                         <label for="email">用户名</label>
-                                        <input id="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                        <input id="email" class="form-control" th:field="*{loginName}" name="email" tabindex="1" required autofocus>
                                         <div class="invalid-feedback">
                                             账号不能为空
                                         </div>
@@ -41,7 +41,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                                        <input id="password" type="password" th:field="*{password}" class="form-control" name="password" tabindex="2" required>
                                         <div class="invalid-feedback">
                                             密码不能为空
                                         </div>
@@ -85,7 +85,16 @@
     </div>
     <script th:src="@{/js/app.min.js}"></script>
     <script th:src="@{/js/scripts.js}"></script>
+    <script th:src="@{/bundles/izitoast/js/iziToast.min.js}"></script>
+    <script th:src="@{/js/page/toastr.js}"></script>
     <script th:src="@{/js/custom.js}"></script>
+    <script th:inline="javascript" th:unless="${#strings.isEmpty(error)}">
+        iziToast.error({
+            title: '错误',
+            message: [[${error}]],
+            position: 'topRight'
+        });
+    </script>
 </body>
 
 </html>

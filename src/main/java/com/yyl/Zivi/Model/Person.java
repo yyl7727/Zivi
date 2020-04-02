@@ -16,7 +16,7 @@ public class Person {
     /**
      * 用户登录名
      */
-    @Column(length = 16)
+    @Column(length = 16,unique = true)
     @NotNull
     private String loginName;
 
