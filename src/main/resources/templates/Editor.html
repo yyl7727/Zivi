@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Zivi - Admin Dashboard Template</title>
+    <!-- General CSS Files -->
+    <link rel="stylesheet" th:href="@{/css/app.min.css}">
+    <link rel="stylesheet" th:href="@{/bundles/summernote/summernote-bs4.css}">
+    <link rel="stylesheet" th:href="@{/bundles/codemirror/lib/codemirror.css}">
+    <link rel="stylesheet" th:href="@{/bundles/codemirror/theme/duotone-dark.css}">
+    <link rel="stylesheet" th:href="@{/bundles/jquery-selectric/selectric.css}">
+    <!-- Template CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/components.css}">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
+    <link rel='shortcut icon' type='image/x-icon' th:href="@{/img/favicon.ico}" />
+</head>
+
+<body>
+    <div class="loader"></div>
+    <div class="container-fluid">
+        <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+                <h4 class="page-title m-b-0">Editor</h4>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="index.html">
+                    <i class="fas fa-home"></i></a>
+            </li>
+            <li class="breadcrumb-item">Forms</li>
+            <li class="breadcrumb-item">Form Editor</li>
+        </ul>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Full Summernote</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <select class="form-control selectric">
+                                        <option>Tech</option>
+                                        <option>News</option>
+                                        <option>Political</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Content</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <textarea class="summernote"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                <div class="col-sm-12 col-md-7">
+                                    <button class="btn btn-primary">Publish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- General JS Scripts -->
+    <script th:src="@{/js/app.min.js}"></script>
+    <!-- JS Libraies -->
+    <script th:src="@{/bundles/summernote/summernote-bs4.js}"></script>
+    <script th:src="@{/bundles/codemirror/lib/codemirror.js}"></script>
+    <script th:src="@{/bundles/codemirror/mode/javascript/javascript.js}"></script>
+    <script th:src="@{/bundles/jquery-selectric/jquery.selectric.min.js}"></script>
+    <script th:src="@{/bundles/ckeditor/ckeditor.js}"></script>
+    <!-- Page Specific JS File -->
+    <script th:src="@{/js/page/ckeditor.js}"></script>
+    <!-- Template JS File -->
+    <script th:src="@{/js/scripts.js}"></script>
+    <!-- Custom JS File -->
+    <script th:src="@{/js/custom.js}"></script>
+</body>
+
+</html>

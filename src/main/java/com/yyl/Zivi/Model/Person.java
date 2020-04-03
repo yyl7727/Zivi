@@ -51,6 +51,9 @@ public class Person {
     @Column(length = 20)
     private String registTime;
 
+    @Column(length = 1)
+    private String personType;
+
     public Integer getId() {
         return Id;
     }
@@ -105,5 +108,13 @@ public class Person {
 
     public void setRegistTime(String registTime) {
         this.registTime = registTime;
+    }
+
+    public String getPersonType() {
+        return personType;
+    }
+
+    public void setPersonType(String personType) {
+        this.personType = personType;
     }
 }

@@ -39,6 +39,7 @@ public class PersonController {
                 //如果账号密码相同保存session，跳转至首页
                 if (person.getPassword().equals(tmpPerson.getPassword())){
                     session.setAttribute("Person",tmpPerson);
+                    redirectAttributes.addFlashAttribute("Person",tmpPerson);
                     return "redirect:/Index";
                 }else {
                     redirectAttributes.addFlashAttribute("error", "密码错误！");
