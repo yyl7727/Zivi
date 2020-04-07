@@ -59,9 +59,14 @@ public class PersonController {
     }
 
     @GetMapping("/Index")
-    public String index(Model model,HttpSession session){
+    public String index(Model model,HttpSession session, RedirectAttributes redirectAttributes){
         Person person = (Person) session.getAttribute("Person");
-        model.addAttribute("Person",person);
-        return "Index";
+        if(person != null){
+            model.addAttribute("Person",person);
+            return "Index";
+        }else {
+            redirectAttributes.addFlashAttribute("error", "请先登录");
+            return "redirect:/Login";
+        }
     }
 }
